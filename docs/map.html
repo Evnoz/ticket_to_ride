@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module map</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>map</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/alice/Documents/%C3%89tudes/ENSTA/Cours/Info/Projet%20info/map.py">/home/alice/Documents/Études/ENSTA/Cours/Info/Projet info/map.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;map<br>
+==========<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;définit&nbsp;les&nbsp;classes&nbsp;<a href="#Ville">Ville</a>&nbsp;et&nbsp;<a href="#Rail">Rail</a>&nbsp;utilisées&nbsp;pour&nbsp;représenter&nbsp;le&nbsp;plateau&nbsp;du&nbsp;jeu.<br>
+-&nbsp;<a href="#Ville">Ville</a>&nbsp;:&nbsp;représente&nbsp;une&nbsp;ville&nbsp;du&nbsp;plateau.<br>
+-&nbsp;<a href="#Rail">Rail</a>&nbsp;:&nbsp;représente&nbsp;un&nbsp;rail&nbsp;reliant&nbsp;deux&nbsp;villes,&nbsp;avec&nbsp;ses&nbsp;propriétés&nbsp;graphiques&nbsp;et&nbsp;logiques.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="map.html#Rail">Rail</a>
+</font></dt><dt><font face="helvetica, arial"><a href="map.html#Ville">Ville</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Rail">class <strong>Rail</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Rail">Rail</a>(couleur,&nbsp;depart,&nbsp;arrivee,&nbsp;val,&nbsp;possession,&nbsp;point_a,&nbsp;point_b,&nbsp;point_c,&nbsp;point_d)<br>
+&nbsp;<br>
+Classe&nbsp;représentant&nbsp;un&nbsp;rail&nbsp;reliant&nbsp;deux&nbsp;villes&nbsp;sur&nbsp;le&nbsp;plateau.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Rail-__init__"><strong>__init__</strong></a>(self, couleur, depart, arrivee, val, possession, point_a, point_b, point_c, point_d)</dt><dd><tt>Initialise&nbsp;un&nbsp;rail&nbsp;avec&nbsp;ses&nbsp;propriétés&nbsp;et&nbsp;ses&nbsp;coordonnées&nbsp;graphiques.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(str):&nbsp;Couleur&nbsp;du&nbsp;rail.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;depart&nbsp;(<a href="#Ville">Ville</a>):&nbsp;<a href="#Ville">Ville</a>&nbsp;de&nbsp;départ.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arrivee&nbsp;(<a href="#Ville">Ville</a>):&nbsp;<a href="#Ville">Ville</a>&nbsp;d'arrivée.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;val&nbsp;(int):&nbsp;Valeur&nbsp;(coût)&nbsp;du&nbsp;rail.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;possession&nbsp;(Joueur|None):&nbsp;Joueur&nbsp;possédant&nbsp;le&nbsp;rail,&nbsp;ou&nbsp;None.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point_a,&nbsp;point_b,&nbsp;point_c&nbsp;(tuple):&nbsp;Coordonnées&nbsp;des&nbsp;points&nbsp;du&nbsp;rail&nbsp;pour&nbsp;le&nbsp;bouton.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point_d&nbsp;(tuple):&nbsp;Coordonnées&nbsp;du&nbsp;point&nbsp;pour&nbsp;placer&nbsp;le&nbsp;drapeau.</tt></dd></dl>
+
+<dl><dt><a name="Rail-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Retourne&nbsp;une&nbsp;description&nbsp;textuelle&nbsp;du&nbsp;rail.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Description&nbsp;du&nbsp;rail.</tt></dd></dl>
+
+<dl><dt><a name="Rail-achat"><strong>achat</strong></a>(self, joueur, cartes)</dt><dd><tt>Permet&nbsp;à&nbsp;un&nbsp;joueur&nbsp;d'acheter&nbsp;ce&nbsp;rail,&nbsp;met&nbsp;à&nbsp;jour&nbsp;la&nbsp;possession&nbsp;et&nbsp;les&nbsp;cartes&nbsp;du&nbsp;joueur.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;achetant&nbsp;le&nbsp;rail.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes&nbsp;(list):&nbsp;Cartes&nbsp;utilisées&nbsp;pour&nbsp;l'achat.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Ville">class <strong>Ville</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Ville">Ville</a>(nom)<br>
+&nbsp;<br>
+Classe&nbsp;représentant&nbsp;une&nbsp;ville&nbsp;du&nbsp;plateau.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Ville-__init__"><strong>__init__</strong></a>(self, nom)</dt><dd><tt>Initialise&nbsp;une&nbsp;ville&nbsp;avec&nbsp;son&nbsp;nom.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nom&nbsp;(str):&nbsp;Nom&nbsp;de&nbsp;la&nbsp;ville.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,31 @@
+id,depart,arrivee,points
+0,Los Angeles,New York,21
+1,Duluth,Houston,8
+2,Sault Ste Marie,Nashville,8
+3,New York,Atlanta,6
+4,Portland,Nashville,17
+5,Vancouver,Montreal,20
+6,Duluth,El Paso,10
+7,Toronto,Miami,10
+8,Portland,Phoenix,11
+9,Dallas,New York,11
+10,Calgary,Salt Lake City,7
+11,Calgary,Phoenix,13
+12,Los Angeles,Miami,20
+13,Winnipeg,Little Rock,11
+14,San Francisco,Atlanta,17
+15,Kansas City,Houston,5
+16,Los Angeles,Chicago,16
+17,Denver,Pittsburgh,11
+18,Chicago,Santa Fe,9
+19,Vancouver,Santa Fe,13
+20,Boston,Miami,12
+21,Chicago,New Orleans,7
+22,Montreal,Atlanta,9
+23,Seattle,New York,22
+24,Denver,El Paso,4
+25,Helena,Los Angeles,8
+26,Winnipeg,Houston,12
+27,Montreal,New Orleans,13
+28,Sault Ste Marie,Oklahoma City,9
+29,Seattle,Los Angeles,9

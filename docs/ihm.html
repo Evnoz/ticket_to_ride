@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ihm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>ihm</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/alice/Documents/%C3%89tudes/ENSTA/Cours/Info/Projet%20info/ihm.py">/home/alice/Documents/Études/ENSTA/Cours/Info/Projet info/ihm.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;ihm<br>
+==========<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;gère&nbsp;l'interface&nbsp;graphique&nbsp;du&nbsp;jeu&nbsp;avec&nbsp;Pygame.<br>
+Il&nbsp;fournit&nbsp;la&nbsp;classe&nbsp;<a href="#IHM">IHM</a>&nbsp;pour&nbsp;l'affichage&nbsp;des&nbsp;éléments&nbsp;du&nbsp;jeu,&nbsp;la&nbsp;gestion&nbsp;des&nbsp;boutons,<br>
+l'affichage&nbsp;des&nbsp;cartes,&nbsp;des&nbsp;rails,&nbsp;et&nbsp;la&nbsp;gestion&nbsp;des&nbsp;fenêtres&nbsp;d'achat&nbsp;et&nbsp;de&nbsp;pioche.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ihm.html#IHM">IHM</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IHM">class <strong>IHM</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#IHM">IHM</a>(jeu,&nbsp;screen)<br>
+&nbsp;<br>
+Classe&nbsp;gérant&nbsp;l'interface&nbsp;graphique&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Attributs&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;jeu&nbsp;:&nbsp;Instance&nbsp;du&nbsp;jeu.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fenetre&nbsp;:&nbsp;Surface&nbsp;Pygame&nbsp;de&nbsp;la&nbsp;fenêtre&nbsp;principale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleurs&nbsp;:&nbsp;Dictionnaire&nbsp;de&nbsp;couleurs&nbsp;utilisées&nbsp;dans&nbsp;l'interface.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="IHM-__init__"><strong>__init__</strong></a>(self, jeu, screen)</dt><dd><tt>Initialise&nbsp;l'interface&nbsp;graphique.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;jeu&nbsp;:&nbsp;Instance&nbsp;du&nbsp;jeu.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;:&nbsp;Surface&nbsp;Pygame&nbsp;de&nbsp;la&nbsp;fenêtre&nbsp;principale.</tt></dd></dl>
+
+<dl><dt><a name="IHM-dessiner_bouton"><strong>dessiner_bouton</strong></a>(self, texte, x, y, largeur, hauteur, couleur)</dt><dd><tt>Dessine&nbsp;un&nbsp;bouton&nbsp;rectangulaire&nbsp;avec&nbsp;du&nbsp;texte.<br>
+Ne&nbsp;vérigie&nbsp;pas&nbsp;si&nbsp;le&nbsp;bouton&nbsp;est&nbsp;cliqué,&nbsp;juste&nbsp;l'affiche.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texte&nbsp;(str):&nbsp;Texte&nbsp;à&nbsp;afficher&nbsp;sur&nbsp;le&nbsp;bouton.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(int):&nbsp;Position&nbsp;horizontale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(int):&nbsp;Position&nbsp;verticale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;largeur&nbsp;(int):&nbsp;Largeur&nbsp;du&nbsp;bouton.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hauteur&nbsp;(int):&nbsp;Hauteur&nbsp;du&nbsp;bouton.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(tuple):&nbsp;Couleur&nbsp;RGB&nbsp;du&nbsp;bouton.</tt></dd></dl>
+
+<dl><dt><a name="IHM-dessiner_cartes"><strong>dessiner_cartes</strong></a>(self, cartes, taille_carte, largeur, hauteur, besoin_coords=False)</dt><dd><tt>Affiche&nbsp;une&nbsp;liste&nbsp;de&nbsp;cartes&nbsp;sur&nbsp;la&nbsp;fenêtre,&nbsp;redimensionnées&nbsp;et&nbsp;espacées.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes&nbsp;(list):&nbsp;Liste&nbsp;de&nbsp;cartes&nbsp;à&nbsp;afficher.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;taille_carte&nbsp;(tuple):&nbsp;Dimensions&nbsp;(largeur,&nbsp;hauteur)&nbsp;d'une&nbsp;carte.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;largeur&nbsp;(int):&nbsp;Largeur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hauteur&nbsp;(int):&nbsp;Hauteur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;besoin_coords&nbsp;(bool):&nbsp;Si&nbsp;True,&nbsp;retourne&nbsp;les&nbsp;coordonnées&nbsp;des&nbsp;cartes.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Liste&nbsp;des&nbsp;coordonnées&nbsp;des&nbsp;cartes&nbsp;si&nbsp;besoin_coords&nbsp;est&nbsp;True,&nbsp;sinon&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="IHM-dessiner_image"><strong>dessiner_image</strong></a>(self, image, x, y, couleur)</dt><dd><tt>Dessine&nbsp;une&nbsp;image&nbsp;à&nbsp;une&nbsp;position&nbsp;donnée,&nbsp;teintée&nbsp;d'une&nbsp;couleur.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;image&nbsp;(pygame.Surface):&nbsp;Image&nbsp;à&nbsp;afficher.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(int):&nbsp;Position&nbsp;horizontale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(int):&nbsp;Position&nbsp;verticale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(tuple):&nbsp;Couleur&nbsp;RGB&nbsp;à&nbsp;appliquer&nbsp;à&nbsp;l'image.</tt></dd></dl>
+
+<dl><dt><a name="IHM-dessiner_texte"><strong>dessiner_texte</strong></a>(self, texte, x, y, couleur, taille)</dt><dd><tt>Dessine&nbsp;du&nbsp;texte&nbsp;à&nbsp;une&nbsp;position&nbsp;donnée.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;texte&nbsp;(str):&nbsp;Texte&nbsp;à&nbsp;afficher.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;(int):&nbsp;Position&nbsp;horizontale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;y&nbsp;(int):&nbsp;Position&nbsp;verticale.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(tuple):&nbsp;Couleur&nbsp;RGB&nbsp;du&nbsp;texte.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;taille&nbsp;(int):&nbsp;Taille&nbsp;de&nbsp;la&nbsp;police.</tt></dd></dl>
+
+<dl><dt><a name="IHM-fenetre_achat"><strong>fenetre_achat</strong></a>(self, rail, joueur, largeur, hauteur, mute, peut_achete, cartes_select=[])</dt><dd><tt>Affiche&nbsp;la&nbsp;fenêtre&nbsp;d'achat&nbsp;d'un&nbsp;rail&nbsp;et&nbsp;gère&nbsp;la&nbsp;sélection&nbsp;des&nbsp;cartes.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rail&nbsp;(Rail):&nbsp;Rail&nbsp;à&nbsp;acheter.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;effectuant&nbsp;l'achat.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;largeur&nbsp;(int):&nbsp;Largeur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hauteur&nbsp;(int):&nbsp;Hauteur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mute&nbsp;(bool):&nbsp;True&nbsp;si&nbsp;le&nbsp;son&nbsp;est&nbsp;coupé.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;peut_achete&nbsp;(bool):&nbsp;True&nbsp;si&nbsp;l'achat&nbsp;est&nbsp;autorisé&nbsp;ce&nbsp;tour-ci.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes_select&nbsp;(list):&nbsp;Cartes&nbsp;déjà&nbsp;sélectionnées&nbsp;pour&nbsp;l'achat.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(continuer&nbsp;(bool),&nbsp;achat_effectue&nbsp;(bool))</tt></dd></dl>
+
+<dl><dt><a name="IHM-fenetre_cartes"><strong>fenetre_cartes</strong></a>(self, largeur, hauteur, joueur)</dt><dd><tt>Affiche&nbsp;la&nbsp;fenêtre&nbsp;des&nbsp;cartes&nbsp;du&nbsp;joueur&nbsp;(wagons&nbsp;et&nbsp;destinations).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;largeur&nbsp;(int):&nbsp;Largeur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hauteur&nbsp;(int):&nbsp;Hauteur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;dont&nbsp;on&nbsp;affiche&nbsp;les&nbsp;cartes.</tt></dd></dl>
+
+<dl><dt><a name="IHM-fenetre_pioche"><strong>fenetre_pioche</strong></a>(self, pioche, cartes_revelees, joueur, largeur, hauteur, achat_possible)</dt><dd><tt>Affiche&nbsp;la&nbsp;fenêtre&nbsp;de&nbsp;pioche&nbsp;de&nbsp;cartes&nbsp;wagons&nbsp;et&nbsp;gère&nbsp;la&nbsp;sélection.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pioche&nbsp;(list):&nbsp;Pile&nbsp;de&nbsp;cartes&nbsp;à&nbsp;piocher.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes_revelees&nbsp;(list):&nbsp;Cartes&nbsp;visibles&nbsp;à&nbsp;piocher.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;qui&nbsp;pioche.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;largeur&nbsp;(int):&nbsp;Largeur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;hauteur&nbsp;(int):&nbsp;Hauteur&nbsp;de&nbsp;la&nbsp;fenêtre.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;achat_possible&nbsp;(bool):&nbsp;True&nbsp;si&nbsp;la&nbsp;pioche&nbsp;est&nbsp;autorisée&nbsp;ce&nbsp;tour-ci.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(continuer&nbsp;(bool),&nbsp;type_pioche&nbsp;(int))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;continuer&nbsp;:&nbsp;False&nbsp;si&nbsp;retour,&nbsp;True&nbsp;sinon.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;type_pioche&nbsp;:&nbsp;0&nbsp;(rien),&nbsp;1&nbsp;(pioche),&nbsp;2&nbsp;(cartes&nbsp;visibles)</tt></dd></dl>
+
+<dl><dt><a name="IHM-jouer_son"><strong>jouer_son</strong></a>(self, fichier, mute)</dt><dd><tt>Joue&nbsp;un&nbsp;son&nbsp;si&nbsp;le&nbsp;mode&nbsp;muet&nbsp;n'est&nbsp;pas&nbsp;activé.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fichier&nbsp;(str):&nbsp;Chemin&nbsp;du&nbsp;fichier&nbsp;son&nbsp;à&nbsp;jouer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;mute&nbsp;(bool):&nbsp;True&nbsp;si&nbsp;le&nbsp;son&nbsp;doit&nbsp;être&nbsp;coupé,&nbsp;False&nbsp;sinon.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

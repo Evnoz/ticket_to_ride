@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module joueurs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>joueurs</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/alice/Documents/%C3%89tudes/ENSTA/Cours/Info/Projet%20info/joueurs.py">/home/alice/Documents/Études/ENSTA/Cours/Info/Projet info/joueurs.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;joueurs<br>
+==============<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;définit&nbsp;la&nbsp;classe&nbsp;<a href="#Joueur">Joueur</a>,&nbsp;qui&nbsp;gère&nbsp;l'ensemble&nbsp;des&nbsp;fonctionnalités&nbsp;liées&nbsp;à&nbsp;un&nbsp;joueur<br>
+dans&nbsp;le&nbsp;jeu.<br>
+&nbsp;<br>
+Fonctionnalités&nbsp;principales&nbsp;:<br>
+-&nbsp;Gestion&nbsp;des&nbsp;cartes,&nbsp;des&nbsp;rails,&nbsp;des&nbsp;objectifs/destinations&nbsp;et&nbsp;du&nbsp;score&nbsp;du&nbsp;joueur.<br>
+-&nbsp;Méthodes&nbsp;pour&nbsp;ajouter/retirer&nbsp;des&nbsp;cartes,&nbsp;mettre&nbsp;à&nbsp;jour&nbsp;le&nbsp;score&nbsp;et&nbsp;les&nbsp;wagons&nbsp;restants.<br>
+-&nbsp;Algorithmes&nbsp;de&nbsp;graphe&nbsp;(BFS,&nbsp;DFS)&nbsp;pour&nbsp;valider&nbsp;les&nbsp;objectifs&nbsp;et&nbsp;calculer&nbsp;le&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;construit.<br>
+&nbsp;<br>
+Classe&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Joueur">Joueur</a>&nbsp;:&nbsp;Représente&nbsp;un&nbsp;joueur&nbsp;du&nbsp;jeu&nbsp;avec&nbsp;ses&nbsp;propriétés&nbsp;et&nbsp;méthodes&nbsp;associées.<br>
+&nbsp;<br>
+Auteurs&nbsp;:&nbsp;Alice&nbsp;DEBELS&nbsp;et&nbsp;Evann&nbsp;MICHEL</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="joueurs.html#Joueur">Joueur</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Joueur">class <strong>Joueur</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Joueur">Joueur</a>(couleur,&nbsp;pseudo,&nbsp;villes)<br>
+&nbsp;<br>
+Classe&nbsp;représentant&nbsp;un&nbsp;joueur&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Gère&nbsp;les&nbsp;cartes,&nbsp;les&nbsp;rails,&nbsp;les&nbsp;destinations,&nbsp;le&nbsp;score,&nbsp;et&nbsp;fournit&nbsp;des&nbsp;méthodes<br>
+pour&nbsp;manipuler&nbsp;l'état&nbsp;du&nbsp;joueur&nbsp;ainsi&nbsp;que&nbsp;des&nbsp;algorithmes&nbsp;de&nbsp;graphe&nbsp;pour&nbsp;valider<br>
+les&nbsp;objectifs&nbsp;et&nbsp;calculer&nbsp;le&nbsp;plus&nbsp;long&nbsp;chemin.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Joueur-BFS"><strong>BFS</strong></a>(self, G, s)</dt><dd><tt>Parcours&nbsp;en&nbsp;largeur&nbsp;du&nbsp;graphe&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;sommet&nbsp;donné.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;(dict):&nbsp;Graphe&nbsp;sous&nbsp;forme&nbsp;de&nbsp;dictionnaire.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;(str|int):&nbsp;Sommet&nbsp;de&nbsp;départ.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Sommets&nbsp;atteints&nbsp;depuis&nbsp;le&nbsp;sommet&nbsp;de&nbsp;départ.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+
+<dl><dt><a name="Joueur-__init__"><strong>__init__</strong></a>(self, couleur, pseudo, villes)</dt><dd><tt>Initialise&nbsp;un&nbsp;joueur&nbsp;avec&nbsp;sa&nbsp;couleur,&nbsp;son&nbsp;pseudo&nbsp;et&nbsp;la&nbsp;liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(str):&nbsp;Couleur&nbsp;du&nbsp;joueur.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pseudo&nbsp;(str):&nbsp;Nom&nbsp;ou&nbsp;pseudo&nbsp;du&nbsp;joueur.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.</tt></dd></dl>
+
+<dl><dt><a name="Joueur-ajouter_points"><strong>ajouter_points</strong></a>(self, nb_case)</dt><dd><tt>Ajoute&nbsp;au&nbsp;score&nbsp;les&nbsp;points&nbsp;correspondant&nbsp;à&nbsp;la&nbsp;longueur&nbsp;d'un&nbsp;rail&nbsp;construit.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nb_case&nbsp;(int):&nbsp;Nombre&nbsp;de&nbsp;cases&nbsp;du&nbsp;rail.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+
+<dl><dt><a name="Joueur-conversion_graphe"><strong>conversion_graphe</strong></a>(self, rails_possedes, villes)</dt><dd><tt>Génère&nbsp;un&nbsp;graphe&nbsp;sous&nbsp;forme&nbsp;de&nbsp;dictionnaire&nbsp;à&nbsp;partir&nbsp;de&nbsp;la&nbsp;liste&nbsp;des&nbsp;rails.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rails_possedes&nbsp;(list):&nbsp;Rails&nbsp;possédés&nbsp;par&nbsp;le&nbsp;joueur.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Graphe&nbsp;des&nbsp;rails&nbsp;possédés&nbsp;(clé&nbsp;=&nbsp;nom&nbsp;de&nbsp;ville,&nbsp;valeur&nbsp;=&nbsp;voisins&nbsp;et&nbsp;poids).<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+
+<dl><dt><a name="Joueur-dfs_plus_long"><strong>dfs_plus_long</strong></a>(self, g, sommet, visites, longueur_courante, chemin_courant, meilleur_resultat)</dt><dd><tt>Recherche&nbsp;récursive&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;dans&nbsp;le&nbsp;graphe&nbsp;du&nbsp;joueur&nbsp;(DFS).<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;(dict):&nbsp;Graphe&nbsp;des&nbsp;rails&nbsp;possédés.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sommet&nbsp;(str):&nbsp;Sommet&nbsp;de&nbsp;départ.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;visites&nbsp;(list):&nbsp;Sommets&nbsp;déjà&nbsp;visités.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;longueur_courante&nbsp;(int):&nbsp;Longueur&nbsp;actuelle&nbsp;du&nbsp;chemin.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;chemin_courant&nbsp;(list):&nbsp;Chemin&nbsp;courant.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;meilleur_resultat&nbsp;(dict):&nbsp;Dictionnaire&nbsp;stockant&nbsp;la&nbsp;meilleure&nbsp;longueur&nbsp;et&nbsp;le&nbsp;chemin&nbsp;associé.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+
+<dl><dt><a name="Joueur-enlever_cartes"><strong>enlever_cartes</strong></a>(self, cartes)</dt><dd><tt>Enlève&nbsp;les&nbsp;cartes&nbsp;utilisées&nbsp;du&nbsp;joueur&nbsp;et&nbsp;met&nbsp;à&nbsp;jour&nbsp;les&nbsp;wagons&nbsp;restants.<br>
+Valide&nbsp;les&nbsp;objectifs&nbsp;atteints&nbsp;et&nbsp;met&nbsp;à&nbsp;jour&nbsp;le&nbsp;score.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes&nbsp;(list):&nbsp;Liste&nbsp;de&nbsp;tuples&nbsp;(carte,&nbsp;x,&nbsp;y)&nbsp;à&nbsp;enlever.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+
+<dl><dt><a name="Joueur-plus_long_chemin"><strong>plus_long_chemin</strong></a>(self)</dt><dd><tt>Calcule&nbsp;la&nbsp;longueur&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;continu&nbsp;construit&nbsp;par&nbsp;le&nbsp;joueur.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Longueur&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+
+<dl><dt><a name="Joueur-verifObjectif"><strong>verifObjectif</strong></a>(self, rails, villes, depart, arrivee)</dt><dd><tt>Vérifie&nbsp;si&nbsp;un&nbsp;objectif&nbsp;(relier&nbsp;deux&nbsp;villes)&nbsp;est&nbsp;atteint&nbsp;par&nbsp;le&nbsp;joueur.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rails&nbsp;(list):&nbsp;Rails&nbsp;possédés.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;depart&nbsp;(str|int):&nbsp;Nom&nbsp;ou&nbsp;id&nbsp;de&nbsp;la&nbsp;ville&nbsp;de&nbsp;départ.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arrivee&nbsp;(str|int):&nbsp;Nom&nbsp;ou&nbsp;id&nbsp;de&nbsp;la&nbsp;ville&nbsp;d'arrivée.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;la&nbsp;ville&nbsp;d'arrivée&nbsp;est&nbsp;accessible&nbsp;depuis&nbsp;la&nbsp;ville&nbsp;de&nbsp;départ,&nbsp;False&nbsp;sinon.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

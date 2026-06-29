@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module cartes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>cartes</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/alice/Documents/%C3%89tudes/ENSTA/Cours/Info/Projet%20info/cartes.py">/home/alice/Documents/Études/ENSTA/Cours/Info/Projet info/cartes.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;cartes<br>
+=============<br>
+&nbsp;<br>
+Ce&nbsp;module&nbsp;definit&nbsp;les&nbsp;classes&nbsp;<a href="#Carte">Carte</a>&nbsp;et&nbsp;<a href="#Destination">Destination</a>&nbsp;utilisees&nbsp;dans&nbsp;le&nbsp;jeu.<br>
+-&nbsp;<a href="#Carte">Carte</a>&nbsp;:&nbsp;represente&nbsp;une&nbsp;carte&nbsp;wagon&nbsp;avec&nbsp;sa&nbsp;couleur&nbsp;et&nbsp;son&nbsp;image.<br>
+-&nbsp;<a href="#Destination">Destination</a>&nbsp;:&nbsp;represente&nbsp;une&nbsp;carte&nbsp;objectif&nbsp;reliant&nbsp;deux&nbsp;villes&nbsp;avec&nbsp;un&nbsp;nombre&nbsp;de&nbsp;points&nbsp;associe.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="cartes.html#Carte">Carte</a>
+</font></dt><dt><font face="helvetica, arial"><a href="cartes.html#Destination">Destination</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Carte">class <strong>Carte</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Carte">Carte</a>(couleur,&nbsp;chemin)<br>
+&nbsp;<br>
+Classe&nbsp;repr�sentant&nbsp;une&nbsp;carte&nbsp;wagon.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Carte-__init__"><strong>__init__</strong></a>(self, couleur, chemin)</dt><dd><tt>Initialise&nbsp;une&nbsp;carte&nbsp;wagon&nbsp;avec&nbsp;sa&nbsp;couleur&nbsp;et&nbsp;le&nbsp;chemin&nbsp;de&nbsp;son&nbsp;image.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(str):&nbsp;Couleur&nbsp;de&nbsp;la&nbsp;carte.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;chemin&nbsp;(str):&nbsp;Chemin&nbsp;vers&nbsp;l'image&nbsp;de&nbsp;la&nbsp;carte.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Destination">class <strong>Destination</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Destination">Destination</a>(id_depart,&nbsp;id_arrivee,&nbsp;points,&nbsp;dico_id_villes)<br>
+&nbsp;<br>
+Classe&nbsp;representant&nbsp;une&nbsp;carte&nbsp;de&nbsp;destination&nbsp;(objectif).<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Destination-__init__"><strong>__init__</strong></a>(self, id_depart, id_arrivee, points, dico_id_villes)</dt><dd><tt>Initialise&nbsp;une&nbsp;carte&nbsp;de&nbsp;destination.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_depart&nbsp;(str|int):&nbsp;Identifiant&nbsp;de&nbsp;la&nbsp;ville&nbsp;de&nbsp;depart.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id_arrivee&nbsp;(str|int):&nbsp;Identifiant&nbsp;de&nbsp;la&nbsp;ville&nbsp;d'arrivee.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;(int):&nbsp;Points&nbsp;de&nbsp;la&nbsp;destination.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dico_id_villes&nbsp;(dict):&nbsp;Dictionnaire&nbsp;associant&nbsp;id&nbsp;de&nbsp;ville&nbsp;a&nbsp;nom.</tt></dd></dl>
+
+<dl><dt><a name="Destination-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Renvoie&nbsp;une&nbsp;chaine&nbsp;de&nbsp;caracteres&nbsp;decrivant&nbsp;la&nbsp;destination&nbsp;et&nbsp;le&nbsp;nombre&nbsp;de&nbsp;points.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Description&nbsp;de&nbsp;la&nbsp;destination.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

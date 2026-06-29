@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>main</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/alice/Documents/%C3%89tudes/ENSTA/Cours/Info/Projet%20info/main.py">/home/alice/Documents/Études/ENSTA/Cours/Info/Projet info/main.py</a></font></td></tr></table>
+    <p><tt>Module&nbsp;principal&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Ce&nbsp;script&nbsp;lance&nbsp;l'application&nbsp;graphique,&nbsp;gère&nbsp;la&nbsp;boucle&nbsp;principale&nbsp;du&nbsp;jeu,<br>
+l'initialisation&nbsp;des&nbsp;données&nbsp;(villes,&nbsp;rails,&nbsp;destinations,&nbsp;cartes),&nbsp;la&nbsp;gestion&nbsp;des&nbsp;joueurs<br>
+(humains&nbsp;et&nbsp;IAs),&nbsp;ainsi&nbsp;que&nbsp;l'affichage&nbsp;et&nbsp;les&nbsp;interactions&nbsp;utilisateur.<br>
+&nbsp;<br>
+Fonctionnalités&nbsp;principales&nbsp;:<br>
+-&nbsp;Chargement&nbsp;des&nbsp;données&nbsp;du&nbsp;plateau&nbsp;et&nbsp;des&nbsp;cartes&nbsp;depuis&nbsp;des&nbsp;fichiers&nbsp;CSV.<br>
+-&nbsp;Gestion&nbsp;de&nbsp;la&nbsp;partie :&nbsp;tours&nbsp;de&nbsp;jeu,&nbsp;pioche,&nbsp;achat&nbsp;de&nbsp;rails,&nbsp;objectifs,&nbsp;scores.<br>
+-&nbsp;Interface&nbsp;graphique&nbsp;avec&nbsp;Pygame&nbsp;(affichage&nbsp;du&nbsp;plateau,&nbsp;des&nbsp;cartes,&nbsp;des&nbsp;boutons,&nbsp;etc.).<br>
+-&nbsp;Prise&nbsp;en&nbsp;charge&nbsp;de&nbsp;plusieurs&nbsp;types&nbsp;d'IA&nbsp;et&nbsp;de&nbsp;joueurs&nbsp;humains.<br>
+-&nbsp;Affichage&nbsp;de&nbsp;l'écran&nbsp;de&nbsp;sélection,&nbsp;de&nbsp;la&nbsp;partie&nbsp;et&nbsp;de&nbsp;la&nbsp;fin&nbsp;de&nbsp;jeu.<br>
+&nbsp;<br>
+Classe&nbsp;principale&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Jeu">Jeu</a>&nbsp;:&nbsp;Gestion&nbsp;de&nbsp;la&nbsp;logique&nbsp;et&nbsp;de&nbsp;l'affichage&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Exécution&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lancer&nbsp;ce&nbsp;script&nbsp;pour&nbsp;démarrer&nbsp;le&nbsp;jeu&nbsp;avec&nbsp;l'interface&nbsp;graphique.<br>
+&nbsp;<br>
+Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="csv.html">csv</a><br>
+</td><td width="25%" valign=top><a href="pygame.html">pygame</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="main.html#Jeu">Jeu</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Jeu">class <strong>Jeu</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Jeu">Jeu</a>(dimension)<br>
+&nbsp;<br>
+Classe&nbsp;principale&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Gère&nbsp;la&nbsp;logique&nbsp;du&nbsp;jeu,&nbsp;l'interface&nbsp;graphique,&nbsp;le&nbsp;chargement&nbsp;des&nbsp;données,<br>
+la&nbsp;gestion&nbsp;des&nbsp;joueurs,&nbsp;des&nbsp;cartes,&nbsp;des&nbsp;rails&nbsp;et&nbsp;des&nbsp;destinations.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Jeu-__init__"><strong>__init__</strong></a>(self, dimension)</dt><dd><tt>Initialise&nbsp;le&nbsp;jeu,&nbsp;charge&nbsp;les&nbsp;données&nbsp;et&nbsp;prépare&nbsp;les&nbsp;variables&nbsp;principales.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dimension&nbsp;(tuple):&nbsp;Dimensions&nbsp;de&nbsp;la&nbsp;fenêtre&nbsp;de&nbsp;jeu&nbsp;(largeur,&nbsp;hauteur).</tt></dd></dl>
+
+<dl><dt><a name="Jeu-debut"><strong>debut</strong></a>(self)</dt><dd><tt>Initialise&nbsp;le&nbsp;début&nbsp;de&nbsp;la&nbsp;partie :&nbsp;pioche&nbsp;des&nbsp;cartes&nbsp;et&nbsp;des&nbsp;destinations&nbsp;pour&nbsp;chaque&nbsp;joueur.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-end"><strong>end</strong></a>(self)</dt><dd><tt>Affiche&nbsp;l'écran&nbsp;de&nbsp;fin&nbsp;de&nbsp;partie&nbsp;avec&nbsp;les&nbsp;scores&nbsp;et&nbsp;propose&nbsp;de&nbsp;rejouer.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-lire_cartes"><strong>lire_cartes</strong></a>(self, fichier_cartes)</dt><dd><tt>Charge&nbsp;les&nbsp;cartes&nbsp;wagon&nbsp;depuis&nbsp;un&nbsp;fichier&nbsp;CSV.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fichier_cartes&nbsp;(str):&nbsp;Chemin&nbsp;du&nbsp;fichier&nbsp;CSV&nbsp;des&nbsp;cartes.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Liste&nbsp;d'objets&nbsp;Carte.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-lire_destination"><strong>lire_destination</strong></a>(self, fichier_destinations)</dt><dd><tt>Charge&nbsp;les&nbsp;destinations&nbsp;(objectifs)&nbsp;depuis&nbsp;un&nbsp;fichier&nbsp;CSV.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fichier_destinations&nbsp;(str):&nbsp;Chemin&nbsp;du&nbsp;fichier&nbsp;CSV&nbsp;des&nbsp;destinations.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Liste&nbsp;d'objets&nbsp;Destination.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-lire_rails"><strong>lire_rails</strong></a>(self, fichier_rails)</dt><dd><tt>Charge&nbsp;les&nbsp;rails&nbsp;depuis&nbsp;un&nbsp;fichier&nbsp;CSV.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fichier_rails&nbsp;(str):&nbsp;Chemin&nbsp;du&nbsp;fichier&nbsp;CSV&nbsp;des&nbsp;rails.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Liste&nbsp;d'objets&nbsp;Rail.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-lire_villes"><strong>lire_villes</strong></a>(self, fichier_villes)</dt><dd><tt>Charge&nbsp;les&nbsp;villes&nbsp;depuis&nbsp;un&nbsp;fichier&nbsp;CSV.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fichier_villes&nbsp;(str):&nbsp;Chemin&nbsp;du&nbsp;fichier&nbsp;CSV&nbsp;des&nbsp;villes.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(liste&nbsp;de&nbsp;Ville,&nbsp;dict&nbsp;nom-&gt;id,&nbsp;dict&nbsp;id-&gt;nom)</tt></dd></dl>
+
+<dl><dt><a name="Jeu-main"><strong>main</strong></a>(self)</dt><dd><tt>Boucle&nbsp;principale&nbsp;du&nbsp;jeu.<br>
+&nbsp;<br>
+Gère&nbsp;l'affichage,&nbsp;les&nbsp;événements&nbsp;utilisateur,&nbsp;le&nbsp;déroulement&nbsp;des&nbsp;tours,<br>
+les&nbsp;actions&nbsp;des&nbsp;joueurs&nbsp;et&nbsp;des&nbsp;IA,&nbsp;et&nbsp;la&nbsp;fin&nbsp;de&nbsp;partie.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-piocher_destination"><strong>piocher_destination</strong></a>(self, joueur, nb)</dt><dd><tt>Pioche&nbsp;un&nbsp;certain&nbsp;nombre&nbsp;de&nbsp;cartes&nbsp;destination&nbsp;pour&nbsp;le&nbsp;joueur.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;concerné.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nb&nbsp;(int):&nbsp;Nombre&nbsp;de&nbsp;cartes&nbsp;à&nbsp;piocher.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-piocher_wagon"><strong>piocher_wagon</strong></a>(self, joueur)</dt><dd><tt>Pioche&nbsp;une&nbsp;carte&nbsp;wagon&nbsp;pour&nbsp;le&nbsp;joueur&nbsp;et&nbsp;l'ajoute&nbsp;à&nbsp;sa&nbsp;main.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;joueur&nbsp;(Joueur):&nbsp;Joueur&nbsp;concerné.</tt></dd></dl>
+
+<dl><dt><a name="Jeu-start"><strong>start</strong></a>(self)</dt><dd><tt>Affiche&nbsp;l'écran&nbsp;de&nbsp;sélection&nbsp;des&nbsp;joueurs&nbsp;et&nbsp;lance&nbsp;la&nbsp;partie.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
