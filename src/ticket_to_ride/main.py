@@ -29,7 +29,6 @@ from cartes import Carte, Destination
 import csv
 from joueurs import Joueur
 from ia import IA_aleatoire, IA_capitaliste, IA_objectif, IA
-import time
 
 # Main class
 class Jeu:
@@ -70,7 +69,7 @@ class Jeu:
 
         self.mute = True
 
-        # Colours available for train cars cards
+        # Colours available for train cards cards
         self.couleurs_carte = ["rouge", "bleu", "vert", "blanc", "jaune", "orange", "rose", "noir", "arc-en-ciel"]
         self.cartes_complet = self.lire_cartes("./csv/cartes.csv")
         self.pioche = self.cartes_complet.copy()
@@ -270,7 +269,7 @@ class Jeu:
 
             # Displaying game information (turn, score, etc.)
             ihm.dessiner_bouton(str(joueur.pseudo) + "'s turn!", largeur - 200, 0, 200, 20, joueur.couleur_joueur)
-            ihm.dessiner_bouton("Turn " + str(self.tour) + ", " + str(joueur.wagons_restants) + " train cars left", largeur - 200, 20, 200, 25, (255, 255, 255))
+            ihm.dessiner_bouton("Turn " + str(self.tour) + ", " + str(joueur.wagons_restants) + " train cards left", largeur - 200, 20, 200, 25, (255, 255, 255))
             ihm.dessiner_bouton("Score : " + str(joueur.score), largeur - 200, 40, 200, 25, (255, 255, 255))
 
             if self.dernier_joueur is not None:

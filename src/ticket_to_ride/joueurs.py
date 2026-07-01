@@ -7,7 +7,7 @@ in the game.
 
 Main features:
 - Management of cards, railways, objectives/destinations, and the player’s score.
-- Methods for adding/removing cards, updating the score, and tracking remaining train cars.
+- Methods for adding/removing cards, updating the score, and tracking remaining train cards.
 - Graph algorithms (BFS, DFS) to validate objectives and calculate the longest constructed path.
 
 Class:
@@ -54,12 +54,12 @@ class Joueur:
             6: 15,
         }
 
-        # Number of train cars remaining for the player
+        # Number of train cards remaining for the player
         self.wagons_restants = 45
 
     def enlever_cartes(self, cartes):
         """
-        Remove the player’s used cards and update the remaining train cars.
+        Remove the player’s used cards and update the remaining train cards.
         Confirm the objectives achieved and update the score.
 
         Args:

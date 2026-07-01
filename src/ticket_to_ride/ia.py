@@ -5,7 +5,7 @@ IA (AI) module
 This module defines various AI classes for the game.
 Each AI inherits from the Player class and offers a different strategy for playing automatically:
 - IA_aleatoire: chooses its actions at random.
-- IA_capitaliste: prioritises buying the most expensive track possible.
+- IA_capitaliste: prioritises buying the most expensive rail possible.
 - IA_objectif: seeks to fulfil its destination objectives as a priority, using shortest-path algorithms.
 
 Main features:

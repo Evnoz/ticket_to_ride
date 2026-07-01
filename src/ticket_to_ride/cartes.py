@@ -13,11 +13,11 @@ import pygame
 
 class Carte:
     """
-    Class representing a train car card.
+    Class representing a train card.
     """
     def __init__(self, couleur, chemin):
         """
-        Initialises a train car card with its colour and the path to its image.
+        Initialises a train card with its colour and the path to its image.
 
         Args:
             couleur (str): The colour of the card.

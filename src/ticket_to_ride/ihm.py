@@ -132,7 +132,7 @@ class IHM:
 
     def fenetre_cartes(self, largeur, hauteur, joueur):
         """
-        Displays the player’s cards window (train cars and destinations).
+        Displays the player’s cards window (train cards and destinations).
 
         Args:
             largeur (int): Width of the window.
@@ -190,9 +190,9 @@ class IHM:
             coords_cartes = self.dessiner_cartes(cartes_possibles, taille_carte, largeur, hauteur, True)
 
         if not peut_achete:
-            self.dessiner_texte("No more than 2 train car cards, 1 destination or 1 rail per turn", largeur//4, hauteur-150, self.couleurs["rouge"], 30)
+            self.dessiner_texte("No more than 2 train cards, 1 destination or 1 rail per turn", largeur//4, hauteur-150, self.couleurs["rouge"], 30)
         elif joueur.wagons_restants < rail.val:
-            self.dessiner_texte("You don't have enough train cars to buy this railway.", largeur//4, hauteur-150, self.couleurs["rouge"], 30)
+            self.dessiner_texte("You don't have enough train cards to buy this railway.", largeur//4, hauteur-150, self.couleurs["rouge"], 30)
         
         ok = True
         if rail.couleur == "gris" and len(cartes_select) >= 1:
