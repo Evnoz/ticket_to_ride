@@ -38,8 +38,8 @@ All of this can be played on a GUI using Pygame. Some sounds are implemented and
 Here is a few pictures to show you the magnificent GUI:
 
 <img width="1101" height="831" alt="main_menu" src="https://github.com/user-attachments/assets/a485cb83-136a-4a5f-84b5-99ae6db7af65" />
-<img width="1104" height="835" alt="deck" src="https://github.com/user-attachments/assets/a4a3d2d5-5d92-4168-8a73-cf074294cf48" />
-<img width="1101" height="832" alt="board" src="https://github.com/user-attachments/assets/1b902bab-c868-4248-8ae4-c34b4347a99c" />
+<img width="1101" height="830" alt="deck" src="https://github.com/user-attachments/assets/e72424a7-e27e-472f-b11b-94f2d11874c8" />
+<img width="1099" height="830" alt="board" src="https://github.com/user-attachments/assets/15178386-ef97-43a0-804f-343264580a7d" />
 <img width="1101" height="830" alt="end" src="https://github.com/user-attachments/assets/08edd9ec-abcd-44de-8906-48b5d603ac8c" />
 
 Congrats Obi Wan!
