@@ -35,10 +35,12 @@ Moreover, you can play with up to 4 friends (5 players) but if you don't have en
 
 All of this can be played on a GUI using Pygame. Some sounds are implemented and you can buy railways by clicking directly on them.
 
-![Main menu](<img width="1101" height="831" alt="main_menu" src="https://github.com/user-attachments/assets/a485cb83-136a-4a5f-84b5-99ae6db7af65" />)
-![Deck interface](<img width="1104" height="835" alt="deck" src="https://github.com/user-attachments/assets/a4a3d2d5-5d92-4168-8a73-cf074294cf48" />)
-![Game board](<img width="1101" height="832" alt="board" src="https://github.com/user-attachments/assets/1b902bab-c868-4248-8ae4-c34b4347a99c" />)
-![End menu](<img width="1101" height="830" alt="end" src="https://github.com/user-attachments/assets/08edd9ec-abcd-44de-8906-48b5d603ac8c" />)
+Here is a few pictures to show you the magnificent GUI:
+
+<img width="1101" height="831" alt="main_menu" src="https://github.com/user-attachments/assets/a485cb83-136a-4a5f-84b5-99ae6db7af65" />
+<img width="1104" height="835" alt="deck" src="https://github.com/user-attachments/assets/a4a3d2d5-5d92-4168-8a73-cf074294cf48" />
+<img width="1101" height="832" alt="board" src="https://github.com/user-attachments/assets/1b902bab-c868-4248-8ae4-c34b4347a99c" />
+<img width="1101" height="830" alt="end" src="https://github.com/user-attachments/assets/08edd9ec-abcd-44de-8906-48b5d603ac8c" />
 
 Congrats Obi Wan!
 
