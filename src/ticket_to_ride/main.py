@@ -269,7 +269,7 @@ class Jeu:
 
             # Displaying game information (turn, score, etc.)
             ihm.dessiner_bouton(str(joueur.pseudo) + "'s turn!", largeur - 200, 0, 200, 20, joueur.couleur_joueur)
-            ihm.dessiner_bouton("Turn " + str(self.tour) + ", " + str(joueur.wagons_restants) + " train cards left", largeur - 200, 20, 200, 25, (255, 255, 255))
+            ihm.dessiner_bouton("Turn " + str(self.tour) + ", " + str(joueur.wagons_restants) + " trains left", largeur - 200, 20, 200, 25, (255, 255, 255))
             ihm.dessiner_bouton("Score : " + str(joueur.score), largeur - 200, 40, 200, 25, (255, 255, 255))
 
             if self.dernier_joueur is not None:
