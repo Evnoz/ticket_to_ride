@@ -12,18 +12,18 @@
     <p><tt>Module&nbsp;joueurs<br>
 ==============<br>
 &nbsp;<br>
-Ce&nbsp;module&nbsp;définit&nbsp;la&nbsp;classe&nbsp;<a href="#Joueur">Joueur</a>,&nbsp;qui&nbsp;gère&nbsp;l'ensemble&nbsp;des&nbsp;fonctionnalités&nbsp;liées&nbsp;à&nbsp;un&nbsp;joueur<br>
-dans&nbsp;le&nbsp;jeu.<br>
+This&nbsp;module&nbsp;defines&nbsp;the&nbsp;<a href="#Joueur">Joueur</a>&nbsp;class,&nbsp;which&nbsp;manages&nbsp;all&nbsp;features&nbsp;related&nbsp;to&nbsp;a&nbsp;player<br>
+in&nbsp;the&nbsp;game.<br>
 &nbsp;<br>
-Fonctionnalités&nbsp;principales&nbsp;:<br>
--&nbsp;Gestion&nbsp;des&nbsp;cartes,&nbsp;des&nbsp;rails,&nbsp;des&nbsp;objectifs/destinations&nbsp;et&nbsp;du&nbsp;score&nbsp;du&nbsp;joueur.<br>
--&nbsp;Méthodes&nbsp;pour&nbsp;ajouter/retirer&nbsp;des&nbsp;cartes,&nbsp;mettre&nbsp;à&nbsp;jour&nbsp;le&nbsp;score&nbsp;et&nbsp;les&nbsp;wagons&nbsp;restants.<br>
--&nbsp;Algorithmes&nbsp;de&nbsp;graphe&nbsp;(BFS,&nbsp;DFS)&nbsp;pour&nbsp;valider&nbsp;les&nbsp;objectifs&nbsp;et&nbsp;calculer&nbsp;le&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;construit.<br>
+Main&nbsp;Features&nbsp;:<br>
+-&nbsp;Management&nbsp;of&nbsp;cards,&nbsp;tracks,&nbsp;objectives/destinations,&nbsp;and&nbsp;the&nbsp;player's&nbsp;score.<br>
+-&nbsp;Methods&nbsp;to&nbsp;add/remove&nbsp;cards,&nbsp;update&nbsp;the&nbsp;score&nbsp;and&nbsp;remaining&nbsp;train&nbsp;cars.<br>
+-&nbsp;Graph&nbsp;algorithms&nbsp;(BFS,&nbsp;DFS)&nbsp;to&nbsp;validate&nbsp;objectives&nbsp;and&nbsp;calculate&nbsp;the&nbsp;longest&nbsp;built&nbsp;path.<br>
 &nbsp;<br>
-Classe&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Joueur">Joueur</a>&nbsp;:&nbsp;Représente&nbsp;un&nbsp;joueur&nbsp;du&nbsp;jeu&nbsp;avec&nbsp;ses&nbsp;propriétés&nbsp;et&nbsp;méthodes&nbsp;associées.<br>
+Class&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Joueur">Joueur</a>&nbsp;:&nbsp;Represents&nbsp;a&nbsp;game&nbsp;player&nbsp;with&nbsp;their&nbsp;associated&nbsp;properties&nbsp;and&nbsp;methods.<br>
 &nbsp;<br>
-Auteurs&nbsp;:&nbsp;Alice&nbsp;DEBELS&nbsp;et&nbsp;Evann&nbsp;MICHEL</tt></p>
+Authors&nbsp;:&nbsp;Alice&nbsp;DEBELS&nbsp;et&nbsp;Evann&nbsp;MICHEL</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
@@ -48,88 +48,88 @@ Auteurs&nbsp;:&nbsp;Alice&nbsp;DEBELS&nbsp;et&nbsp;Evann&nbsp;MICHEL</tt></p>
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#Joueur">Joueur</a>(couleur,&nbsp;pseudo,&nbsp;villes)<br>
 &nbsp;<br>
-Classe&nbsp;représentant&nbsp;un&nbsp;joueur&nbsp;du&nbsp;jeu.<br>
+Class&nbsp;representing&nbsp;a&nbsp;player&nbsp;in&nbsp;the&nbsp;game.<br>
 &nbsp;<br>
-Gère&nbsp;les&nbsp;cartes,&nbsp;les&nbsp;rails,&nbsp;les&nbsp;destinations,&nbsp;le&nbsp;score,&nbsp;et&nbsp;fournit&nbsp;des&nbsp;méthodes<br>
-pour&nbsp;manipuler&nbsp;l'état&nbsp;du&nbsp;joueur&nbsp;ainsi&nbsp;que&nbsp;des&nbsp;algorithmes&nbsp;de&nbsp;graphe&nbsp;pour&nbsp;valider<br>
-les&nbsp;objectifs&nbsp;et&nbsp;calculer&nbsp;le&nbsp;plus&nbsp;long&nbsp;chemin.<br>&nbsp;</tt></td></tr>
+Manages&nbsp;cards,&nbsp;tracks,&nbsp;destinations,&nbsp;score,&nbsp;and&nbsp;provides&nbsp;methods<br>
+to&nbsp;manipulate&nbsp;the&nbsp;player's&nbsp;state&nbsp;as&nbsp;well&nbsp;as&nbsp;graph&nbsp;algorithms&nbsp;to&nbsp;validate<br>
+objectives&nbsp;and&nbsp;calculate&nbsp;the&nbsp;longest&nbsp;path.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="Joueur-BFS"><strong>BFS</strong></a>(self, G, s)</dt><dd><tt>Parcours&nbsp;en&nbsp;largeur&nbsp;du&nbsp;graphe&nbsp;à&nbsp;partir&nbsp;d'un&nbsp;sommet&nbsp;donné.<br>
+<dl><dt><a name="Joueur-BFS"><strong>BFS</strong></a>(self, G, s)</dt><dd><tt>Breadth-First&nbsp;Search&nbsp;of&nbsp;the&nbsp;graph&nbsp;starting&nbsp;from&nbsp;a&nbsp;given&nbsp;vertex.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;(dict):&nbsp;Graphe&nbsp;sous&nbsp;forme&nbsp;de&nbsp;dictionnaire.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;(str|int):&nbsp;Sommet&nbsp;de&nbsp;départ.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;G&nbsp;(dict):&nbsp;Graph&nbsp;represented&nbsp;as&nbsp;a&nbsp;dictionary.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;(str|int):&nbsp;Starting&nbsp;vertex.<br>
 &nbsp;<br>
 Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Sommets&nbsp;atteints&nbsp;depuis&nbsp;le&nbsp;sommet&nbsp;de&nbsp;départ.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list:&nbsp;Vertices&nbsp;reached&nbsp;from&nbsp;the&nbsp;starting&nbsp;vertex.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+Author&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
 
-<dl><dt><a name="Joueur-__init__"><strong>__init__</strong></a>(self, couleur, pseudo, villes)</dt><dd><tt>Initialise&nbsp;un&nbsp;joueur&nbsp;avec&nbsp;sa&nbsp;couleur,&nbsp;son&nbsp;pseudo&nbsp;et&nbsp;la&nbsp;liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
+<dl><dt><a name="Joueur-__init__"><strong>__init__</strong></a>(self, couleur, pseudo, villes)</dt><dd><tt>Initializes&nbsp;a&nbsp;player&nbsp;with&nbsp;their&nbsp;color,&nbsp;username,&nbsp;and&nbsp;the&nbsp;list&nbsp;of&nbsp;cities&nbsp;on&nbsp;the&nbsp;board.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(str):&nbsp;Couleur&nbsp;du&nbsp;joueur.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;pseudo&nbsp;(str):&nbsp;Nom&nbsp;ou&nbsp;pseudo&nbsp;du&nbsp;joueur.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.</tt></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;couleur&nbsp;(str):&nbsp;Player's&nbsp;color.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pseudo&nbsp;(str):&nbsp;Player's&nbsp;name&nbsp;or&nbsp;username.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;List&nbsp;of&nbsp;cities&nbsp;on&nbsp;the&nbsp;board.</tt></dd></dl>
 
-<dl><dt><a name="Joueur-ajouter_points"><strong>ajouter_points</strong></a>(self, nb_case)</dt><dd><tt>Ajoute&nbsp;au&nbsp;score&nbsp;les&nbsp;points&nbsp;correspondant&nbsp;à&nbsp;la&nbsp;longueur&nbsp;d'un&nbsp;rail&nbsp;construit.<br>
+<dl><dt><a name="Joueur-ajouter_points"><strong>ajouter_points</strong></a>(self, nb_case)</dt><dd><tt>Adds&nbsp;the&nbsp;points&nbsp;corresponding&nbsp;to&nbsp;the&nbsp;length&nbsp;of&nbsp;a&nbsp;built&nbsp;track&nbsp;to&nbsp;the&nbsp;score.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;nb_case&nbsp;(int):&nbsp;Nombre&nbsp;de&nbsp;cases&nbsp;du&nbsp;rail.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nb_case&nbsp;(int):&nbsp;Number&nbsp;of&nbsp;spaces&nbsp;on&nbsp;the&nbsp;track.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+Author&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
 
-<dl><dt><a name="Joueur-conversion_graphe"><strong>conversion_graphe</strong></a>(self, rails_possedes, villes)</dt><dd><tt>Génère&nbsp;un&nbsp;graphe&nbsp;sous&nbsp;forme&nbsp;de&nbsp;dictionnaire&nbsp;à&nbsp;partir&nbsp;de&nbsp;la&nbsp;liste&nbsp;des&nbsp;rails.<br>
+<dl><dt><a name="Joueur-conversion_graphe"><strong>conversion_graphe</strong></a>(self, rails_possedes, villes)</dt><dd><tt>Generates&nbsp;a&nbsp;graph&nbsp;as&nbsp;a&nbsp;dictionary&nbsp;from&nbsp;the&nbsp;list&nbsp;of&nbsp;tracks.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rails_possedes&nbsp;(list):&nbsp;Rails&nbsp;possédés&nbsp;par&nbsp;le&nbsp;joueur.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rails_possedes&nbsp;(list):&nbsp;Tracks&nbsp;owned&nbsp;by&nbsp;the&nbsp;player.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;List&nbsp;of&nbsp;cities&nbsp;on&nbsp;the&nbsp;board.<br>
 &nbsp;<br>
 Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Graphe&nbsp;des&nbsp;rails&nbsp;possédés&nbsp;(clé&nbsp;=&nbsp;nom&nbsp;de&nbsp;ville,&nbsp;valeur&nbsp;=&nbsp;voisins&nbsp;et&nbsp;poids).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dict:&nbsp;Graph&nbsp;of&nbsp;owned&nbsp;tracks&nbsp;(key&nbsp;=&nbsp;city&nbsp;name,&nbsp;value&nbsp;=&nbsp;neighbors&nbsp;and&nbsp;weights).<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+Author&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
 
-<dl><dt><a name="Joueur-dfs_plus_long"><strong>dfs_plus_long</strong></a>(self, g, sommet, visites, longueur_courante, chemin_courant, meilleur_resultat)</dt><dd><tt>Recherche&nbsp;récursive&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;dans&nbsp;le&nbsp;graphe&nbsp;du&nbsp;joueur&nbsp;(DFS).<br>
+<dl><dt><a name="Joueur-dfs_plus_long"><strong>dfs_plus_long</strong></a>(self, g, sommet, visites, longueur_courante, chemin_courant, meilleur_resultat)</dt><dd><tt>Recursive&nbsp;search&nbsp;for&nbsp;the&nbsp;longest&nbsp;path&nbsp;in&nbsp;the&nbsp;player's&nbsp;graph&nbsp;(DFS).<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;(dict):&nbsp;Graphe&nbsp;des&nbsp;rails&nbsp;possédés.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;sommet&nbsp;(str):&nbsp;Sommet&nbsp;de&nbsp;départ.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;visites&nbsp;(list):&nbsp;Sommets&nbsp;déjà&nbsp;visités.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;longueur_courante&nbsp;(int):&nbsp;Longueur&nbsp;actuelle&nbsp;du&nbsp;chemin.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;chemin_courant&nbsp;(list):&nbsp;Chemin&nbsp;courant.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;meilleur_resultat&nbsp;(dict):&nbsp;Dictionnaire&nbsp;stockant&nbsp;la&nbsp;meilleure&nbsp;longueur&nbsp;et&nbsp;le&nbsp;chemin&nbsp;associé.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;g&nbsp;(dict):&nbsp;Graph&nbsp;of&nbsp;owned&nbsp;tracks.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sommet&nbsp;(str):&nbsp;Starting&nbsp;vertex.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;visites&nbsp;(list):&nbsp;Vertices&nbsp;already&nbsp;visited.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;longueur_courante&nbsp;(int):&nbsp;Current&nbsp;length&nbsp;of&nbsp;the&nbsp;path.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;chemin_courant&nbsp;(list):&nbsp;Current&nbsp;path.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;meilleur_resultat&nbsp;(dict):&nbsp;Dictionary&nbsp;storing&nbsp;the&nbsp;best&nbsp;length&nbsp;and&nbsp;associated&nbsp;path.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+Author&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
 
-<dl><dt><a name="Joueur-enlever_cartes"><strong>enlever_cartes</strong></a>(self, cartes)</dt><dd><tt>Enlève&nbsp;les&nbsp;cartes&nbsp;utilisées&nbsp;du&nbsp;joueur&nbsp;et&nbsp;met&nbsp;à&nbsp;jour&nbsp;les&nbsp;wagons&nbsp;restants.<br>
-Valide&nbsp;les&nbsp;objectifs&nbsp;atteints&nbsp;et&nbsp;met&nbsp;à&nbsp;jour&nbsp;le&nbsp;score.<br>
+<dl><dt><a name="Joueur-enlever_cartes"><strong>enlever_cartes</strong></a>(self, cartes)</dt><dd><tt>Removes&nbsp;the&nbsp;player's&nbsp;used&nbsp;cards&nbsp;and&nbsp;updates&nbsp;the&nbsp;remaining&nbsp;train&nbsp;cars.<br>
+Validates&nbsp;completed&nbsp;objectives&nbsp;and&nbsp;updates&nbsp;the&nbsp;score.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;cartes&nbsp;(list):&nbsp;Liste&nbsp;de&nbsp;tuples&nbsp;(carte,&nbsp;x,&nbsp;y)&nbsp;à&nbsp;enlever.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cartes&nbsp;(list):&nbsp;List&nbsp;of&nbsp;tuples&nbsp;(card,&nbsp;x,&nbsp;y)&nbsp;to&nbsp;remove.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+Author&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
 
-<dl><dt><a name="Joueur-plus_long_chemin"><strong>plus_long_chemin</strong></a>(self)</dt><dd><tt>Calcule&nbsp;la&nbsp;longueur&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin&nbsp;continu&nbsp;construit&nbsp;par&nbsp;le&nbsp;joueur.<br>
+<dl><dt><a name="Joueur-plus_long_chemin"><strong>plus_long_chemin</strong></a>(self)</dt><dd><tt>Calculates&nbsp;the&nbsp;length&nbsp;of&nbsp;the&nbsp;longest&nbsp;continuous&nbsp;path&nbsp;built&nbsp;by&nbsp;the&nbsp;player.<br>
 &nbsp;<br>
 Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Longueur&nbsp;du&nbsp;plus&nbsp;long&nbsp;chemin.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;int:&nbsp;Length&nbsp;of&nbsp;the&nbsp;longest&nbsp;path.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
+Author&nbsp;:&nbsp;Evann&nbsp;MICHEL</tt></dd></dl>
 
-<dl><dt><a name="Joueur-verifObjectif"><strong>verifObjectif</strong></a>(self, rails, villes, depart, arrivee)</dt><dd><tt>Vérifie&nbsp;si&nbsp;un&nbsp;objectif&nbsp;(relier&nbsp;deux&nbsp;villes)&nbsp;est&nbsp;atteint&nbsp;par&nbsp;le&nbsp;joueur.<br>
+<dl><dt><a name="Joueur-verifObjectif"><strong>verifObjectif</strong></a>(self, rails, villes, depart, arrivee)</dt><dd><tt>Checks&nbsp;if&nbsp;an&nbsp;objective&nbsp;(connecting&nbsp;two&nbsp;cities)&nbsp;has&nbsp;been&nbsp;completed&nbsp;by&nbsp;the&nbsp;player.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;rails&nbsp;(list):&nbsp;Rails&nbsp;possédés.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;Liste&nbsp;des&nbsp;villes&nbsp;du&nbsp;plateau.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;depart&nbsp;(str|int):&nbsp;Nom&nbsp;ou&nbsp;id&nbsp;de&nbsp;la&nbsp;ville&nbsp;de&nbsp;départ.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;arrivee&nbsp;(str|int):&nbsp;Nom&nbsp;ou&nbsp;id&nbsp;de&nbsp;la&nbsp;ville&nbsp;d'arrivée.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rails&nbsp;(list):&nbsp;Owned&nbsp;tracks.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;villes&nbsp;(list):&nbsp;List&nbsp;of&nbsp;cities&nbsp;on&nbsp;the&nbsp;board.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;depart&nbsp;(str|int):&nbsp;Name&nbsp;or&nbsp;ID&nbsp;of&nbsp;the&nbsp;departure&nbsp;city.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arrivee&nbsp;(str|int):&nbsp;Name&nbsp;or&nbsp;ID&nbsp;of&nbsp;the&nbsp;arrival&nbsp;city.<br>
 &nbsp;<br>
 Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;si&nbsp;la&nbsp;ville&nbsp;d'arrivée&nbsp;est&nbsp;accessible&nbsp;depuis&nbsp;la&nbsp;ville&nbsp;de&nbsp;départ,&nbsp;False&nbsp;sinon.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;arrival&nbsp;city&nbsp;is&nbsp;accessible&nbsp;from&nbsp;the&nbsp;departure&nbsp;city,&nbsp;False&nbsp;otherwise.<br>
 &nbsp;<br>
-Auteur&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
+Author&nbsp;:&nbsp;Alice&nbsp;DEBELS</tt></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>

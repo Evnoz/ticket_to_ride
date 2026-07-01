@@ -1,4 +1,10 @@
 import unittest
+
+import sys
+
+parent_dir = "../src/ticket_to_ride"
+sys.path.append(parent_dir)
+
 from main import Jeu
 from joueurs import Joueur
 from ia import IA

@@ -1,23 +1,23 @@
 """
-Module ia
+IA (AI) module
 =========
 
-Ce module définit différentes classes d'IA pour le jeu.
-Chaque IA hérite de la classe Joueur et propose une stratégie différente pour jouer automatiquement :
-- IA_aleatoire : choisit ses actions de façon aléatoire.
-- IA_capitaliste : privilégie l'achat du rail le plus cher possible.
-- IA_objectif : cherche à remplir ses objectifs de destination en priorité, en utilisant des algorithmes de plus court chemin.
+This module defines various AI classes for the game.
+Each AI inherits from the Player class and offers a different strategy for playing automatically:
+- IA_aleatoire: chooses its actions at random.
+- IA_capitaliste: prioritises buying the most expensive track possible.
+- IA_objectif: seeks to fulfil its destination objectives as a priority, using shortest-path algorithms.
 
-Fonctions principales :
-- Gestion des actions automatiques d'un joueur IA (piocher, acheter, planifier).
-- Algorithmes de graphe pour la planification des objectifs (Dijkstra).
-- Méthodes utilitaires pour l'achat de rails et la gestion des cartes.
+Main features:
+- Management of an AI player’s automatic actions (draw, buy, plan).
+- Graph algorithms for objective planning (Dijkstra).
+- Utility methods for buying tracks and managing cards.
 
 Classes :
-    IA : Classe de base pour une IA.
-    IA_aleatoire : IA qui joue aléatoirement.
-    IA_capitaliste : IA qui maximise la valeur de ses achats.
-    IA_objectif : IA qui optimise la réalisation de ses objectifs.
+    AI: Base class for an AI.
+    IA_aleatoire: An AI that plays randomly.
+    IA_capitaliste: An AI that maximises the value of its purchases.
+    IA_objectif: An AI that optimises the achievement of its objectives.
 
 Auteurs : Alice DEBELS et Evann MICHEL
 """
@@ -26,27 +26,26 @@ import random
 from map import Ville, Rail
 from cartes import Carte, Destination
 from joueurs import Joueur
-import time
 import numpy as np
 
 class IA(Joueur):
     """
-    Classe de base pour une IA héritant de Joueur.
-    Fournit des méthodes génériques pour piocher des cartes, piocher des destinations
-    et acheter des rails.
+    Base class for an AI that inherits from Joueur (player class).
+    Provides generic methods for drawing cards, drawing destinations
+    and purchasing railway.
 
-    Auteur : Evann MICHEL
+    Author: Evann MICHEL
     """
 
     def __init__(self, couleur, pseudo, villes, cartes_complet):
         """
-        Initialise une IA avec ses paramètres de base.
+        Initialises an AI with its basic settings.
 
         Args:
-            couleur (str): Couleur du joueur.
-            pseudo (str): Pseudo du joueur.
-            villes (list): Liste des villes du plateau.
-            cartes_complet (list): Jeu complet de cartes pour la pioche.
+            couleur (str): The player’s colour.
+            pseudo (str): The player’s username.
+            villes (list): List of cities on the board.
+            cartes_complet (list): Full deck of cards for the draw pile.
         """
         super().__init__(couleur, pseudo, villes)
         self.rails_restants = []
@@ -55,19 +54,19 @@ class IA(Joueur):
 
     def jouer(self):
         """
-        Méthode à surcharger par les classes filles pour définir le comportement de l'IA à chaque tour.
+        A method to be overridden by subclasses to define the AI’s behaviour on each turn.
         """
         pass
 
     def piocher(self, pile_pioche):
         """
-        Pioche une carte depuis la pile de pioche et l'ajoute à la main du joueur.
+        Draws a card from the draw pile and adds it to the player’s hand.
 
         Args:
-            pile_pioche (list): Pile de cartes à piocher.
+            pile_pioche (list): The pile of cards to draw from.
 
         Returns:
-            list: Nouvelle pile de pioche (mélangée et réinitialisée si vide).
+            list: New draw pile (shuffled and reset if empty).
         """
         pioche = pile_pioche.pop()
         self.cartes.append(pioche)
@@ -79,13 +78,13 @@ class IA(Joueur):
 
     def piocher_dest(self, pile_dest):
         """
-        Pioche une carte destination et l'ajoute à la liste des objectifs du joueur.
+        Draws a destination card and adds it to the player’s list of objectives.
 
         Args:
-            pile_dest (list): Pile de cartes destination.
+            pile_dest (list): Stack of destination cards.
 
         Returns:
-            list: Nouvelle pile de destinations.
+            list: New stack of destinations.
         """
         choix = pile_dest.pop()
         self.destination.append(choix)
@@ -93,11 +92,11 @@ class IA(Joueur):
 
     def acheter_rail(self, rail):
         """
-        Achete un rail si le joueur possède les cartes nécessaires.
-        Prend en compte si le rail est gris ou non pour les cartes à défausser
+        Buy a rail if the player has the necessary cards.
+        Take into account whether the rail is grey or not when discarding cards
 
         Args:
-            rail (Rail): Rail à acheter.
+            rail (Rail): The rail to buy.
         """
         if rail.couleur == "gris":
             couleur_max = max(self.couleurs, key=self.couleurs.get)
@@ -133,36 +132,36 @@ class IA(Joueur):
 
 class IA_aleatoire(IA):
     """
-    IA qui effectue des actions de manière aléatoire.
-    Elle achète un rail possible au hasard ou pioche si aucun achat n'est possible.
+    AI that performs actions at random.
+    It buys a possible railway at random or draws a card if no purchase is possible.
 
-    Auteur : Evann MICHEL
+    Author: Evann MICHEL
     """
 
     def __init__(self, couleur, pseudo, villes, cartes_complet):
         """
-        Initialise l'IA aléatoire.
+        Initialises the random AI.
 
         Args:
-            couleur (str): Couleur du joueur.
-            pseudo (str): Pseudo du joueur.
-            villes (list): Liste des villes du plateau.
-            cartes_complet (list): Jeu complet de cartes pour la pioche.
+            couleur (str): Player’s colour.
+            pseudo (str): Player’s username.
+            villes (list): List of cities on the board.
+            cartes_complet (list): Full deck of cards for the draw pile.
         """
         super().__init__(couleur, pseudo, villes, cartes_complet)
 
     def jouer(self, couleurs_carte, rails_restants, pile_pioche, pile_dest):
         """
-        Joue un tour en choisissant aléatoirement un rail à acheter ou en piochant.
+        Play a turn by randomly selecting a track to buy or by drawing a card.
 
         Args:
-            couleurs_carte (dict): Couleurs de cartes disponibles.
-            rails_restants (list): Rails encore disponibles.
-            pile_pioche (list): Pile de cartes à piocher.
-            pile_dest (list): Pile de cartes destination.
+            couleurs_carte (dict): Available card colours.
+            rails_restants (list): Tracks still available.
+            pile_pioche (list): Stack of cards to draw from.
+            pile_dest (list): Destination card stack.
 
         Returns:
-            tuple: (pile_pioche, pile_dest) après le tour.
+            tuple: (draw_stack, destination_stack) after the turn.
         """
         self.rails_restants = rails_restants
         self.peut_acheter = []
@@ -182,35 +181,35 @@ class IA_aleatoire(IA):
 
 class IA_capitaliste(IA):
     """
-    IA qui privilégie l'achat du rail le plus cher possible à chaque tour.
+    AI that prioritises purchasing the most expensive rail possible in each turn.
 
-    Auteur : Evann MICHEL
+    Author: Evann MICHEL
     """
 
     def __init__(self, couleur, pseudo, villes, cartes_complet):
         """
-        Initialise l'IA capitaliste.
+        Initialises the capitalist AI.
 
         Args:
-            couleur (str): Couleur du joueur.
-            pseudo (str): Pseudo du joueur.
-            villes (list): Liste des villes du plateau.
-            cartes_complet (list): Jeu complet de cartes pour la pioche.
+            couleur (str): Player’s colour.
+            pseudo (str): Player’s username.
+            villes (list): List of cities on the board.
+            cartes_complet (list): Full deck of cards for the draw pile.
         """
         super().__init__(couleur, pseudo, villes, cartes_complet)
 
     def jouer(self, couleurs_carte, rails_restants, pile_pioche, pile_dest):
         """
-        Joue un tour en achetant le rail le plus cher possible ou en piochant.
+        Play a turn by buying the most expensive track possible or by drawing a card.
 
         Args:
-            couleurs_carte (dict): Couleurs de cartes disponibles.
-            rails_restants (list): Rails encore disponibles.
-            pile_pioche (list): Pile de cartes à piocher.
-            pile_dest (list): Pile de cartes destination.
+            couleurs_carte (dict): Available card colours.
+            rails_restants (list): Tracks still available.
+            pile_pioche (list): Stack of cards to draw from.
+            pile_dest (list): Destination card stack.
 
         Returns:
-            tuple: (pile_pioche, pile_dest) après le tour.
+            tuple: (draw_stack, destination_stack) after the turn.
         """
         self.rails_restants = rails_restants
         self.peut_acheter = []
@@ -230,35 +229,35 @@ class IA_capitaliste(IA):
 
 class IA_objectif(IA):
     """
-    IA qui cherche à remplir ses objectifs de destination en priorité
-    en utilisant des algorithmes de plus court chemin pour planifier ses achats de rails.
+    AI that prioritises meeting its destination targets
+    by using shortest-path algorithms to plan its rail purchases.
 
-    Auteurs : Alice DEBELS et Evann MICHEL
+    Authors: Alice DEBELS and Evann MICHEL
     """
 
     def __init__(self, couleur, pseudo, villes, cartes_complet):
         """
-        Initialise l'IA objectif.
+        Initialises the objective AI.
 
         Args:
-            couleur (str): Couleur du joueur.
-            pseudo (str): Pseudo du joueur.
-            villes (list): Liste des villes du plateau.
-            cartes_complet (list): Jeu complet de cartes pour la pioche.
+            couleur (str): Player’s colour.
+            pseudo (str): Player’s username.
+            villes (list): List of cities on the board.
+            cartes_complet (list): Full deck of cards for the draw pile.
         """
         super().__init__(couleur, pseudo, villes, cartes_complet)
 
     def cle_de_valeur_mini(self, etat, dist, e):
         """
-        Retourne la liste des clés de valeur e dans etat ayant la valeur minimale dans dist.
+        Returns the list of keys of value e in etat with the minimal value in dist.
 
         Args:
-            etat (dict): Dictionnaire d'états des sommets.
-            dist (dict): Dictionnaire des distances.
-            e (string): Valeur recherchée dans etat (blanc, gris ou noir).
+            etat (dict): Dictionary of vertex states.
+            dist (dict): Dictionary of distances.
+            e (string): Value to search for in state (blanc, gris, noir) (=white, grey, black).
 
         Returns:
-            list: Clés correspondant à la valeur minimale.
+            list: Keys corresponding to the minimum value.
 
         Auteur : Alice DEBELS
         """
@@ -279,17 +278,17 @@ class IA_objectif(IA):
 
     def dijkstra_pcc(self, g, s, a):
         """
-        Calcule le plus court chemin entre deux sommets d'un graphe pondéré.
+        Calculates the shortest path between two vertices in a weighted graph.
 
         Args:
-            g (dict): Graphe valué (dictionnaire d'adjacence).
-            s (Ville): Sommet de départ.
-            a (Ville): Sommet d'arrivée.
+            g (dict): Weighted graph (adjacency dictionary).
+            s (City): Starting vertex.
+            a (City): Destination vertex.
 
         Returns:
-            tuple: (chemin, sommets_traites, sommets_decouverts, distance)
+            tuple: (path, visited_vertices, unvisited_vertices, distance)
 
-        Auteur : Alice DEBELS
+        Author: Alice DEBELS
         """
         dist = {}
         pcc = {}
@@ -327,17 +326,17 @@ class IA_objectif(IA):
 
     def chemins_objectifs(self, rails_possedes, rails_restants, destinations):
         """
-        Génère la liste des chemins optimaux pour remplir les objectifs de destination.
+        Generates a list of optimal routes to fulfil the destination objectives.
 
         Args:
-            rails_possedes (list): Rails déjà possédés par le joueur.
-            rails_restants (list): Rails encore disponibles.
-            destinations (list): Liste des cartes destination du joueur.
+            rails_possedes (list): railway already owned by the player.
+            rails_restants (list): railway still available.
+            destinations (list): List of the player’s destination cards.
 
         Returns:
-            list: Liste de chemins (list de Ville) pour chaque objectif.
+            list: List of routes (list of Ville (cities)) for each objective.
 
-        Auteur : Alice DEBELS
+        Author: Alice DEBELS
         """
         rails_non_adverses = rails_possedes + rails_restants
         sorted(destinations, key=lambda destination: destination.points, reverse=True)
@@ -351,15 +350,15 @@ class IA_objectif(IA):
 
     def conversion_chemin_rails(self, chemin):
         """
-        Convertit un chemin de villes en une liste de rails correspondants.
+        Converts a path of cities into a list of corresponding railway.
 
         Args:
-            chemin (list): Liste ordonnée de noms de villes.
+            chemin (list): An ordered list of town names.
 
         Returns:
-            list: Liste de Rail correspondant au chemin.
+            list: A list of railway corresponding to the path.
 
-        Auteur : Alice DEBELS
+        Author: Alice DEBELS
         """
         chemin_rails = []
         for i in range (len(chemin) - 1):
@@ -370,20 +369,20 @@ class IA_objectif(IA):
 
     def jouer(self, couleurs_carte, rails_restants, pile_pioche, pile_dest):
         """
-        Joue un tour en essayant de remplir les objectifs de destination en priorité.
-        Achète les rails nécessaires, pioche des destinations ou des cartes si besoin.
-        Si aucune carte destination n'est disponible, acheter les rails les plus chers.
+        Play a round by trying to fulfil the destination objectives as a priority.
+        Buy the necessary railways, and draw destinations or cards if needed.
+        If no destination cards are available, buy the most expensive tracks.
 
         Args:
-            couleurs_carte (dict): Couleurs de cartes disponibles.
-            rails_restants (list): Rails encore disponibles.
-            pile_pioche (list): Pile de cartes à piocher.
-            pile_dest (list): Pile de cartes destination.
+            couleurs_carte (dict): Available card colours.
+            rails_restants (list): Tracks still available.
+            pile_pioche (list): Stack of cards to be drawn from.
+            pile_dest (list): Stack of destination cards.
 
         Returns:
-            tuple: (pile_pioche, pile_dest) après le tour.
+            tuple: (draw_stack, destination_stack) after the turn.
 
-        Auteur : Evann MICHEL
+        Author : Evann MICHEL
         """
         self.rails_restants = rails_restants
         chemins = self.chemins_objectifs(self.rails, self.rails_restants, self.destination)
@@ -391,7 +390,7 @@ class IA_objectif(IA):
         val_dest = [dest.points for dest in self.destination]
         val_dest.sort(reverse=True)
 
-        # Ordonne les destinations par points décroissants
+        # Sort the destinations in descending order by points
         for i in range(len(self.destination)):
             for val in val_dest:
                 if self.destination[i].points == val:
@@ -399,7 +398,7 @@ class IA_objectif(IA):
                     break
         self.peut_acheter = [[]]*len(self.destination)
 
-        # Recherche les rails pouvant être achetés pour accomplir chaque destination
+        # Find the railways that can be purchased to reach each destination
         for i in range(len(self.destination)):
             for rail in chemin_souhaite[i]:
                 if rail.possession == None and rail.couleur == "gris" and self.couleurs[max(self.couleurs, key=self.couleurs.get)] + self.couleurs["arc-en-ciel"] >= rail.val:
@@ -407,7 +406,7 @@ class IA_objectif(IA):
                 elif rail.possession == None and rail.couleur != "gris" and self.couleurs[rail.couleur] + self.couleurs["arc-en-ciel"] >= rail.val:
                     self.peut_acheter[i].append(rail)
 
-        # Achète le premier rail le plus cher possible
+        # Buy the first railway that’s as expensive as possible
         if self.peut_acheter != [[]]*len(self.destination):
             for i in range(len(self.peut_acheter)):
                 if self.peut_acheter[i] != []:
@@ -415,11 +414,11 @@ class IA_objectif(IA):
                     self.acheter_rail(rail)
                     break
 
-        # Si aucune destination n'est faisable et qu'il possède moins de 3 cartes destination, en repiocher une
+        # If no destination is possible and has less than 3 destination cards, draw another one
         elif chemins == [[]]*len(self.destination) and pile_dest != [] and len(self.destination) < 3:
             pile_dest = self.piocher_dest(pile_dest)
 
-        # Sinon acheter le rail le plus cher possible
+        # Alternatively, buy the most expensive railway you can find
         elif chemins == [[]]*len(self.destination) and (pile_dest == [] or len(self.destination) >= 3):
             self.peut_acheter = []
             for rail in self.rails_restants:
@@ -435,7 +434,7 @@ class IA_objectif(IA):
                 pile_pioche = self.piocher(pile_pioche)
             return pile_pioche, pile_dest
         
-        # Sinon piocher
+        # Otherwise, draw cards
         else:
             pile_pioche = self.piocher(pile_pioche)
             pile_pioche = self.piocher(pile_pioche)
